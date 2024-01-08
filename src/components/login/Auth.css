@@ -1,0 +1,105 @@
+.Profile {
+  background-image: url(../../image/userImage.png);
+  background-repeat: no-repeat;
+  background-size: contain; /* 이미지가 div에 맞춰서 크기가 조절됩니다 */
+  width: 140px; /* 줄어든 너비 */
+  height: 140px; /* 줄어든 높이 */
+  background-position: center; /* 이미지를 div의 중앙에 배치 */
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.Profile-Text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 20px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.LoginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.LoginForm .MuiTextField-root {
+  margin: 10px 0px 0px 0px;
+  width: 300px;
+}
+
+.LoginButton .MuiButton-root {
+  width: 300px;
+  border-radius: 10px;
+  margin-top: 10px;
+  text-transform: none;
+}
+
+.LoginCheck {
+  margin-top: 10px;
+}
+
+.LoginCheck .MuiFormControlLabel-label {
+  font-size: 12px;
+}
+
+.LoginCheck .MuiButton-root {
+  font-size: 12px;
+  margin-left: 20px;
+  text-transform: none;
+}
+
+.LoginOther {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: black; /* 색상은 예시이며, 원하는 색상으로 변경하세요. */
+  font-size: 12px;
+}
+
+.LoginOther::before,
+.LoginOther::after {
+  content: '';
+  height: 1px;
+  width: 132px;
+  flex: 1;
+  border-bottom: 1px solid black; /* 선의 색상과 두께를 원하는 대로 조절하세요. */
+  margin: 0 10px; /* "OR" 텍스트와 선 사이의 간격을 조절하세요. */
+}
+
+.LoginOtherButton {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+.Google {
+  background-image: url(../../image/google_logo.png);
+  background-repeat: no-repeat;
+  background-size: contain; /* 이미지가 div에 맞춰서 크기가 조절됩니다 */
+  width: 20px; /* 줄어든 너비 */
+  height: 20px; /* 줄어든 높이 */
+}
+
+.Facebook {
+  background-image: url(../../image/Facebook_Logo.png);
+  background-repeat: no-repeat;
+  background-size: contain; /* 이미지가 div에 맞춰서 크기가 조절됩니다 */
+  width: 20px; /* 줄어든 너비 */
+  height: 20px; /* 줄어든 높이 */
+}
+
+.Apple {
+  background-image: url(../../image/apple-logo.png);
+  background-repeat: no-repeat;
+  background-size: contain; /* 이미지가 div에 맞춰서 크기가 조절됩니다 */
+  width: 20px; /* 줄어든 너비 */
+  height: 20px; /* 줄어든 높이 */
+}
+
+.NoAccount {
+  margin-top: 10px;
+  font-size: 12px;
+  display: flex;
+}

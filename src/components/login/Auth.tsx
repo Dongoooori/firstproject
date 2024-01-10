@@ -1,9 +1,55 @@
 import { Box, Button, Checkbox, FormControlLabel, TextField } from '@mui/material'
 import "./Auth.css"
-import React from 'react'
+import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Auth() {
+  const [login, setLogin] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [loginTrigger, setLoginTrigger] = useState<number>(0);
+  const [loginError, setLoginError] = useState<boolean>(false);
+  const [passwordError, setPasswordError] = useState<boolean>(false);
+
+  const handleLogin = () => {
+    setLoginTrigger(Date.now());
+    setLoginError(false);
+    setPasswordError(false);
+  }
+
+  const handleLoginChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setLogin(e.target.value);
+  }
+
+  const handlePasswordChange = (e:ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+  }
+
+  const checkError = () => {
+    if(login === "") {
+      setLoginError(true);
+    } else if (password === "") {
+      setPasswordError(true);
+    }
+  }
+
+  useEffect(() => {
+    if(loginTrigger > 0) {
+      checkError();
+    }
+  },[loginTrigger])
+
+  console.log("login", login)
+  console.log("password", password)
+  console.log("loginError", loginError)
+
+  useEffect(() => {
+    setLogin("");
+    setPassword("");
+    setLoginError(false);
+    setLoginTrigger(0);
+    setPasswordError(false);
+  },[])
+
   return (
     <Box sx={{
       position: "relative",
@@ -22,11 +68,13 @@ export default function Auth() {
       <div className='Profile' />
       <div className='Profile-Text'>Welcome back!</div>
       <div className='LoginForm'>
-        <TextField placeholder='Username' autoComplete='off'/>
-        <TextField placeholder='Password' autoComplete='off'/>
+        <TextField placeholder='Email address' autoComplete='off' value={login} onChange={handleLoginChange}/>
+        {loginError ? <div className='EmailError'>Email address is required</div> : ""}
+        <TextField placeholder='Password' autoComplete='off' value={password} onChange={handlePasswordChange}/>
       </div>
+      {passwordError ? <div className='PasswordError'>Please enter a password</div> : ""} 
       <div className='LoginButton'>
-        <Button variant='contained'>Sign in</Button>
+        <Button variant='contained' onClick={handleLogin}>Sign in</Button>
       </div>
       <div className='LoginCheck'>
         <FormControlLabel control={<Checkbox />} label="Remember me"/>

@@ -6,8 +6,8 @@ export default function Initial() {
 
   return (
     <div className='Initial'>
-      <div className='Initial_label'>First Project</div>
-      <div className='Initial_label_login'><Link to="/login">Login</Link></div>
+      <div className='Initial_label'>TodoList Project</div>
+      <div className='Initial_label_login'><Link to="/todoList">Login</Link></div>
     </div>
   )
 }

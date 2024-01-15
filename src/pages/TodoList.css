@@ -1,0 +1,134 @@
+.TodoList_Dark {
+  background-color: #313131;
+  background-image: linear-gradient(to left, #393939, #5A5A5A);
+  height: 834px;
+  position: relative;
+  display: flex;
+  justify-content: center; /* 가로 방향 중앙 정렬 */
+  align-items: center;
+}
+
+.TodoList_Light {
+  background-color: #313131;
+  background-image: linear-gradient(to left, #BDBDBD, #D3D3D3);
+  height: 834px;
+  position: relative;
+  display: flex;
+  justify-content: center; /* 가로 방향 중앙 정렬 */
+  align-items: center;
+}
+
+.Header_Dark {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  background-color: #000434;
+  border-bottom: 1px solid #565656;
+  align-items: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding-left: 20px;
+  padding-right: 20px
+}
+
+.Header_Light {
+  color: orange;
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  background-color: #F4F4F4;
+  border-bottom: 1px solid #F1F1F1;
+  align-items: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding-left: 20px;
+  padding-right: 20px
+}
+
+.Header_List {
+  display: flex;
+  gap: 12px;
+  color: orange;
+}
+
+.Label:hover {
+  cursor: pointer;
+}
+
+.Label-Active {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: white;
+  text-underline-position: under;
+}
+
+.TodoBox_Light {
+  color: black;
+}
+
+.TodoBox_Dark {
+  color: white;
+}
+
+.Footer_Light {
+  height: 70px;
+  background-color: #F4F4F4;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  color: white;
+  display: flex;
+  margin-top: auto;
+  align-items: end;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.Footer_Dark {
+  height: 70px;
+  background-color: #000434;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  color: white;
+  display: flex;
+  margin-top: auto;
+  align-items: end;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.Footer_Light .MuiTextField-root {
+  width: 380px;
+  margin-top: auto;
+}
+
+.Footer_Dark .MuiTextField-root {
+  width: 380px;
+}
+
+.Footer_Dark .MuiInputBase-root {
+  width: 380px;
+  background-color: white;
+}
+
+.Footer_Light .MuiButtonBase-root:hover {
+  background-color: orange;
+}
+
+.Footer_Light .MuiButtonBase-root {
+  height: 56px;
+  text-transform: none;
+  font-size: 16px;
+  background-color: orange;
+}
+
+.Footer_Dark .MuiButtonBase-root:hover {
+  background-color: orange;
+}
+
+.Footer_Dark .MuiButtonBase-root {
+  height: 56px;
+  text-transform: none;
+  font-size: 16px;
+  background-color: orange;
+}

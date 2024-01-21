@@ -65,10 +65,12 @@
 
 .TodoBox_Light {
   color: black;
+  overflow: auto;
 }
 
 .TodoBox_Dark {
   color: white;
+  overflow: auto;
 }
 
 .Footer_Light {

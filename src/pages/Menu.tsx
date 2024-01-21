@@ -10,9 +10,6 @@ export default function Menu() {
   }
   return (
     <>
-      <header>
-        <Header />
-      </header>
       <main>
         <div>
           <div onClick={handleTodoList}>

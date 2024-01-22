@@ -91,8 +91,7 @@ export default function TodoList() {
     setLightMode(false);
     setText("");
   }, []);
-
-
+  
   return (
     <div className={lightMode ? "TodoList_Light" : "TodoList_Dark"}>
       <Box 

@@ -16,14 +16,20 @@ const filters = ["All", "Active", "Completed"]
 export default function TodoList() {
   // darkMode, LightMode
   const [lightMode, setLightMode] = useState<boolean>(false);
+
+  // localStorage initial value
+  const initialTodos = () => {
+    const storedTodos = localStorage.getItem("todos");
+    return storedTodos ? JSON.parse(storedTodos) : [];
+  };
+
   // allTodos
-  const [todos, setTodos] = useState<TodoProp[]>([])
-  //
+  const [todos, setTodos] = useState<TodoProp[]>(initialTodos);
+  // header filter
   const [currentFilter, setCurrentFilter] = useState<string>("All");
 
   // todoText
   const [text, setText] = useState<string>("");
-  console.log(text)
 
   // filtered todoList
   const filteredTodos = todos.filter(todo => {
@@ -64,25 +70,28 @@ export default function TodoList() {
     }
   }
 
-  // 
+  // todos update
   const handleUpdate = (id: string) => {
     setTodos(todos.map(todo => 
       todo.id === id ? { ...todo, status: todo.status === "active" ? "completed" : "active" } : todo
     ));
   }
 
-  // 
+  // delete todos
   const handleDelete = (id: string) => {
     setTodos(todos.filter((t) => t.id !== id))
   }
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos))
+  },[todos])
 
   // first Mounting
   useEffect(() => {
     setLightMode(false);
     setText("");
-  },[])
-
-
+  }, []);
+  
   return (
     <div className={lightMode ? "TodoList_Light" : "TodoList_Dark"}>
       <Box 
